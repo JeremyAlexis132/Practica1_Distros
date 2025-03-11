@@ -5,7 +5,14 @@
 #define MAX 100
 
 int main() {
-    int matrizA[MAX][MAX], matrizB[MAX][MAX], matrizC[MAX][MAX];
+    int **matrizA = (int **)malloc(MAX * sizeof(int *));
+    int **matrizB = (int **)malloc(MAX * sizeof(int *));
+    int **matrizC = (int **)malloc(MAX * sizeof(int *));
+    for (int i = 0; i < MAX; i++) {
+        matrizA[i] = (int *)malloc(MAX * sizeof(int));
+        matrizB[i] = (int *)malloc(MAX * sizeof(int));
+        matrizC[i] = (int *)malloc(MAX * sizeof(int));
+    }
     int i=0, j=0, k=0;
     for(i=0; i<MAX; i++) {
         for(j=0; j<MAX; j++) {
